@@ -109,3 +109,8 @@ PocketPsychologist/
 ## Лицензия
 
 Этот проект создан в образовательных целях.
+
+| Screenshots |
+|-------------|
+| ![Splash Screenshot](].png) |
+| ![Main screen Screenshot](2.png) |
