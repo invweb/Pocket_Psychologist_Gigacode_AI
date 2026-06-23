@@ -1,36 +1,36 @@
-# Карманный психолог (Pocket Psychologist)
+# Pocket Psychologist
 
-Анализ настроения по голосу с помощью ML Kit
+Voice mood Analysis using ML Kit
 
-## Описание
+## Description
 
-Приложение анализирует тембр и скорость речи пользователя, определяет настроение и предлагает дыхательные упражнения. Фишка: виджет «Настроение дня» и вибрация в ритме успокаивающего сердечного ритма.
+The app analyzes the timbre and speed of the user's speech, determines the mood and offers breathing exercises. Feature: the "Mood of the day" widget and vibration in the rhythm of a soothing heart rate.
 
-## Структура проекта
+## Project structure
 
 ```
 PocketPsychologist/
 ├── app/
 │   ├── src/main/
 │   │   ├── java/com/zx_tole/pocketpsychologist/
-│   │   │   ├── ui/                      # UI компоненты
-│   │   │   │   ├── theme/              # Темы и цвета
-│   │   │   │   ├── home/               # Главный экран
-│   │   │   │   ├── breathing/          # Экран дыхательных упражнений
+│   │   │   ,── ui/ # UI components
+│   │   │   │   ├── theme/              # Themes and colors
+│   │   │   │   ├── home/               # Main screen
+│   │   │   │   ├── breathing/          # Breathing Exercises screen
 │   │   │   │   └── viewmodel/          # ViewModels
-│   │   │   ├── data/                   # Данные и репозитории
-│   │   │   │   ├── model/              # Модели данных
-│   │   │   │   ├── repository/         # Репозитории
+│   │   │   ├── data/                   # Data and repositories
+│   │   │   │   ├── model/              # Data models
+│   │   │   │   ├── repository/         # Repositories
 │   │   │   │   └── repository/
-│   │   │   ├── voice/                  # Голосовой анализ
-│   │   │   ├── service/                # Службы
-│   │   │   ├── widget/                 # Виджеты
+│   │   │   ,── voice/ # Voice analysis
+│   │   │   ,── service/ # Services
+│   │   │   ├── widget/                 # Widgets
 │   │   │   └── di/                     # DI (Hilt)
-│   │   ├── res/                        # Ресурсы
-│   │   │   ├── layout/                 # Макеты
-│   │   │   ├── values/                 # Строки, цвета, темы
-│   │   │   ├── xml/                    # XML конфиги
-│   │   │   └── drawable/               # Иконки
+│   │   ├── res/                        # Resources
+│   │   │   ├── layout/                 # Layouts
+│   │   │   ├── values/                 # Strings, colors, themes
+│   │   │   ,── xml/ # XML configs
+│   │   │   ,── drawable/ # Icons
 │   │   └── AndroidManifest.xml
 │   └── build.gradle.kts
 ├── build.gradle.kts
@@ -38,7 +38,7 @@ PocketPsychologist/
 └── gradle/libs.versions.toml
 ```
 
-## Зависимости
+## Dependencies
 
 - AndroidX Core KTX
 - Material Components
@@ -50,65 +50,65 @@ PocketPsychologist/
 - Hilt (DI)
 - AndroidX Activity Compose
 
-## Разрешения
+## Permissions
 
-- RECORD_AUDIO - запись голоса
-- VIBRATE - вибрация для упражнений
-- POST_NOTIFICATIONS - уведомления
-- FOREGROUND_SERVICE - фоновый сервис
+- RECORD_AUDIO - voice recording
+- VIBRATE - vibration for exercise
+- POST_NOTIFICATIONS - notifications
+- FOREGROUND_SERVICE - background service
 
-## Функции
+## Functions
 
-1. **Анализ голоса**: Запись речи и определение настроения
-2. **Виджет настроения**: Отображение последнего настроения на главном экране
-3. **Дыхательные упражнения**: Анимированное упражнение с вибрацией
-4. **История**: Сохранение истории настроений в базе данных
+1. **Voice Analysis**: Speech recording and mood detection
+2. **Mood Widget**: Displays the latest mood on the home screen
+3. **Breathing Exercises**: An animated exercise with vibration
+4. **History**: Saving the mood history in the database
 
-## Использование
+## Usage
 
-1. Запустите приложение
-2. Нажмите кнопку "Начать запись"
-3. Проговорите что-нибудь в течение 30 секунд
-4. После анализа увидите свое настроение
-5. Используйте дыхательное упражнение для расслабления
-6. Добавьте виджет "Настроение дня" на главный экран
+1. Launch the app
+2. Press the "Start Recording"
+button 3. Say something for 30 seconds.
+4. After the analysis, you will see your mood
+5. Use a breathing exercise to relax
+6. Add the "Mood of the Day" widget to the home screen
 
-## Настройка
+## Setting up
 
-Для сборки проекта требуется:
-- Android Studio Hedgehog или новее
-- JDK 11 или новее
-- Android SDK с API 36
+To build the project, you need:
+- Android Studio Hedgehog or later
+- JDK 11 or later
+- Android SDK with API 36
 
-## Важные файлы
+## Important files
 
-### Ключевые Kotlin файлы
-- `ui/HomeScreen.kt` - главный экран приложения
-- `voice/VoiceAnalyzer.kt` - анализатор голоса
-- `data/repository/MoodRepository.kt` - репозиторий настроений
-- `ui/viewmodel/HomeViewModel.kt` - ViewModel для главного экрана
+### Key Kotlin files
+- `ui/HomeScreen.kt` - the main screen of the application
+- `voice/VoiceAnalyzer.kt' - voice analyzer
+- `data/repository/MoodRepository.kt` - sentiment repository
+- `ui/viewmodel/HomeViewModel.kt` - ViewModel for the home screen
 
-### Ресурсы
-- `res/values/strings.xml` - строки интерфейса
-- `res/values/colors.xml` - цвета темы
-- `res/values/themes.xml` - темы приложения
-- `res/xml/mood_widget_info.xml` - конфигурация виджета
+### Resources
+- `res/values/strings.xml ` - interface strings
+- `res/values/colors.xml ` - theme colors
+- `res/values/themes.xml ` - application themes
+- `res/xml/mood_widget_info.xml ` - widget configuration
 
-### Конфигурация
-- `gradle/libs.versions.toml` - версии зависимостей
-- `app/build.gradle.kts` - конфигурация сборки
+### Configuration
+- `gradle/libs.versions.toml` - dependency versions
+- `app/build.gradle.kts` - build configuration
 
-## Планы развития
+## Development plans
 
-- Интеграция с ML Kit Voice Match API для более точного анализа
-- Классификация настроений с помощью кастомной модели
-- Интеграция с Google Fit для отслеживания состояния
-- Экспорт истории настроений в PDF
-- Уведомления и напоминания о дыхательных упражнениях
+- Integration with ML Kit Voice Match API for more accurate analysis
+- Classification of moods using a custom model
+- Integration with Google Fit for health tracking
+- Export sentiment history to PDF
+- Notifications and reminders about breathing exercises
 
-## Лицензия
+## License
 
-Этот проект создан в образовательных целях.
+This project was created for educational purposes.
 
 | Screenshots |
 |-------------|
