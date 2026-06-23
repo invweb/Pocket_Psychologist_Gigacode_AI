@@ -1,21 +1,13 @@
 package com.zx_tole.pocketpsychologist.ui
 
-import android.content.Context
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Home
-import androidx.compose.material.icons.filled.Star
-import androidx.compose.material.icons.filled.Mic
-import androidx.compose.material.icons.filled.Stop
-import androidx.compose.material.icons.filled.WbSunny
-import androidx.compose.material.icons.filled.ArrowForward
-import androidx.compose.material.icons.filled.Close
-import androidx.compose.material.icons.filled.Remove
-import androidx.compose.material.icons.filled.Check
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
+import androidx.compose.material.icons.filled.*
 import androidx.compose.material3.*
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.runtime.*
@@ -23,31 +15,60 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.zx_tole.pocketpsychologist.R
 import com.zx_tole.pocketpsychologist.data.model.MoodRecord
 import com.zx_tole.pocketpsychologist.data.model.MoodType
+import com.zx_tole.pocketpsychologist.ui.home.HomeEvent
+import com.zx_tole.pocketpsychologist.ui.home.HomeIntent
+import com.zx_tole.pocketpsychologist.ui.home.HomeState
+import com.zx_tole.pocketpsychologist.ui.home.HomeViewModel
+import com.zx_tole.pocketpsychologist.ui.theme.MoodAnxious
 import com.zx_tole.pocketpsychologist.ui.theme.MoodCalm
 import com.zx_tole.pocketpsychologist.ui.theme.MoodExcited
-import com.zx_tole.pocketpsychologist.ui.theme.MoodAnxious
-import com.zx_tole.pocketpsychologist.ui.theme.MoodSad
 import com.zx_tole.pocketpsychologist.ui.theme.MoodNeutral
-import com.zx_tole.pocketpsychologist.ui.viewmodel.HomeViewModel
+import com.zx_tole.pocketpsychologist.ui.theme.MoodSad
 import com.zx_tole.pocketpsychologist.ui.breathing.BreathingExerciseScreen
 import kotlinx.coroutines.delay
-import androidx.compose.ui.res.stringResource
+
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun HomeScreen(viewModel: HomeViewModel) {
-    val mood = viewModel.moodFlow.collectAsState()
-    val lastMoodState = viewModel.lastMoodFlow.collectAsState()
-    val lastMood = lastMoodState.value
-    val isRecording = viewModel.isRecording.collectAsState()
-    val analysisProgress = viewModel.analysisProgress.collectAsState()
-    val recordDuration = viewModel.recordDuration.collectAsState()
+fun HomeScreen(
+    homeViewModel: HomeViewModel = androidx.lifecycle.viewmodel.compose.viewModel()
+) {
+    val homeState by homeViewModel.state.collectAsState()
+    val homeEvent by homeViewModel.events.collectAsState()
+    
+    // Handle events
+    LaunchedEffect(homeEvent) {
+        homeEvent?.let { event ->
+            when (event) {
+                is HomeEvent.RecordingStarted -> {
+                    // Already handled by state update
+                }
+                is HomeEvent.RecordingStopped -> {
+                    // Already handled by state update
+                }
+                is HomeEvent.AnalysisProgressChanged -> {
+                    // Progress is handled by state update
+                }
+                is HomeEvent.MoodAnalyzed -> {
+                    // Mood analyzed and saved
+                }
+                is HomeEvent.HistoryLoaded -> {
+                    // History loaded
+                }
+                is HomeEvent.Error -> {
+                    // Handle error
+                }
+            }
+        }
+    }
     
     var showBreathingDialog by remember { mutableStateOf(false) }
     
@@ -96,23 +117,23 @@ fun HomeScreen(viewModel: HomeViewModel) {
                 Spacer(modifier = Modifier.height(16.dp))
                 
                 // Mood Today Widget
-                MoodTodayWidget(lastMood)
+                MoodTodayWidget(homeState.lastMood)
                 
                 Spacer(modifier = Modifier.height(24.dp))
                 
                 // Analysis Section
                 AnalysisSection(
-                    isRecording = isRecording.value,
-                    analysisProgress = analysisProgress.value,
-                    recordDuration = recordDuration.value,
-                    onRecordClick = { viewModel.startRecording() },
-                    onStopClick = { viewModel.stopRecording() }
+                    isRecording = homeState.isRecording,
+                    analysisProgress = homeState.analysisProgress,
+                    recordDuration = homeState.recordDuration,
+                    onRecordClick = { homeViewModel.handleIntent(HomeIntent.RecordButtonClick) },
+                    onStopClick = { homeViewModel.handleIntent(HomeIntent.StopButtonClick) }
                 )
                 
                 Spacer(modifier = Modifier.height(24.dp))
                 
                 // Recent Mood History
-                MoodHistorySection(mood.value)
+                MoodHistorySection(homeState.moodHistory)
                 
                 Spacer(modifier = Modifier.height(24.dp))
                 

@@ -33,6 +33,11 @@ class VoiceAnalyzer(private val context: Context) {
     private val mainScope = CoroutineScope(Dispatchers.Main)
     private val ioScope = CoroutineScope(Dispatchers.IO)
     
+    // Get current audio level from MediaRecorder
+    fun getAudioLevel(): Float {
+        return mediaRecorder?.maxAmplitude?.toFloat()?.div(32768f) ?: 0f
+    }
+    
     fun startRecording(outputPath: String, maxDuration: Long = 30000) {
         if (_isRecording.value == true) return
         
@@ -131,11 +136,7 @@ class VoiceAnalyzer(private val context: Context) {
         _analysisResult.postValue(moodRecord)
     }
     
-    private fun getAudioLevel(): Float {
-        return mediaRecorder?.maxAmplitude?.toFloat()?.div(32768f) ?: 0f
-    }
-    
-    private fun estimateSpeechRate(): Float {
+    fun estimateSpeechRate(): Float {
         // Simple estimation based on audio level fluctuations
         val level = getAudioLevel()
         return when {
@@ -146,7 +147,7 @@ class VoiceAnalyzer(private val context: Context) {
         }
     }
     
-    private fun estimatePitch(audioLevel: Float): Float {
+    fun estimatePitch(audioLevel: Float): Float {
         // Pitch estimation based on audio characteristics
         return when {
             audioLevel < 0.15f -> 200f // Lower pitch, calm
@@ -155,7 +156,7 @@ class VoiceAnalyzer(private val context: Context) {
         }
     }
     
-    private fun determineMood(volume: Float, speechRate: Float, pitch: Float): MoodType {
+    fun determineMood(volume: Float, speechRate: Float, pitch: Float): MoodType {
         // Simple mood determination logic based on audio characteristics
         // In production, this would use ML models
         
