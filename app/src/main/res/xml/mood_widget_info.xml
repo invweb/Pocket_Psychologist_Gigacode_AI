@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
+    android:description="@string/mood_today"
+    android:initialLayout="@layout/mood_widget_layout"
+    android:minWidth="146dp"
+    android:minHeight="72dp"
+    android:minResizeWidth="110dp"
+    android:minResizeHeight="44dp"
+    android:targetCellWidth="2"
+    android:targetCellHeight="1"
+    android:resizeMode="horizontal|vertical"
+    android:updatePeriodMillis="1800000"
+    android:widgetCategory="home_screen" />

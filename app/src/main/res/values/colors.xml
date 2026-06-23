@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#E1F5FE</color>
+    <color name="purple_500">#81D4FA</color>
+    <color name="purple_700">#29B6F6</color>
+    <color name="teal_200">#B2DFDB</color>
+    <color name="teal_700">#4DB6AC</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    
+    <!-- App colors - calm palette -->
+    <color name="background">#F5F7FA</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="primary">#29B6F6</color>
+    <color name="primaryVariant">#0288D1</color>
+    <color name="secondary">#4DB6AC</color>
+    <color name="secondaryVariant">#00897B</color>
+    <color name="onPrimary">#FFFFFF</color>
+    <color name="onSurface">#263238</color>
+    <color name="onBackground">#263238</color>
+    
+    <!-- Mood colors -->
+    <color name="mood_neutral">#BDBDBD</color>
+    <color name="mood_calm">#81C784</color>
+    <color name="mood_excited">#FFB74D</color>
+    <color name="mood_anxious">#FF7043</color>
+    <color name="mood_sad">#90A4AE</color>
+    
+    <!-- Breathing exercise colors -->
+    <color name="breath_inhale">#4DB6AC</color>
+    <color name="breath_exhale">#81C784</color>
+    <color name="breath_hold">#FFB74D</color>
+    
+    <!-- Card colors -->
+    <color name="card_background">#FFFFFF</color>
+    <color name="card_shadow">#1A000000</color>
+</resources>
