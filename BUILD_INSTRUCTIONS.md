@@ -1,79 +1,79 @@
-# Инструкция по сборке и запуску
+# Build and Run Instructions
 
-## Требования
+## Requirements
 
-1. **Android Studio**: Версия Hedgehog или новее
-2. **JDK**: Java Development Kit 11 или новее
+1. **Android Studio**: Hedgehog version or later
+2. **JDK**: Java Development Kit 11 or later
 3. **Android SDK**: API Level 36 (Android 14)
 
-## Шаги по сборке
+## Build Steps
 
-### Вариант 1: Через Android Studio
+### Option 1: Via Android Studio
 
-1. Откройте проект в Android Studio
-2. Подождите пока Gradle синхронизируется
-3. Подключите устройство/эмулятор
-4. Нажмите Run (зеленый треугольник)
+1. Open the project in Android Studio
+2. Wait for Gradle to sync
+3. Connect the device/emulator
+4. Click Run (green triangle)
 
-### Вариант 2: Через командную строку
+### Option 2: Via the command line
 
 ```bash
 cd /Users/vasiliikarpenko/AndroidStudioProjects/PocketPsychologist
 
-# Проверьте установку Java
+# Check Java installation
 export JAVA_HOME=$(/usr/libexec/java_home -v 11)
 echo $JAVA_HOME
 
-# Синхронизация Gradle
+# Sync Gradle
 ./gradlew clean
 
-# Сборка debug версии
+# Build the debug version
 ./gradlew assembleDebug
 
-# Установка на устройство
+# Install on the device
 ./gradlew installDebug
 
-# Запуск приложения
+# Run the application
 adb shell am start -n com.zx_tole.pocketpsychologist/.ui.MainActivity
 ```
 
-## Использование приложения
+## Using the application
 
-### Анализ настроения
+### Mood Analysis
 
-1. Откройте приложение
-2. Нажмите кнопку "Начать запись"
-3. Проговорите что-нибудь в течение 30 секунд
-4. Подождите завершения анализа
-5. Увидите свое настроение в виджете "Настроение дня"
+1. Open the application
+2. Click the "Start Recording" button
+3. Speak for 30 seconds
+4. Wait for the analysis to complete
+5. See your mood in the "Daily Mood" widget
 
-### Дыхательные упражнения
+### Breathing Exercises
 
-1. Нажмите на карточку "Сделайте глубокий вдох"
-2. Следуйте инструкциям на экране:
-   - Вдыхайте в течение 4 секунд
-   - Задержите дыхание на 4 секунды
-   - Выдыхайте в течение 4 секунд
-   - Задержите на 4 секунды
-3. Повторяйте упражнение 3-5 минут
+1. Click the "Take a deep breath" card
+2. Follow the on-screen instructions:
+- Inhale for 4 seconds
+- Hold your breath for 4 seconds
+- Exhale for 4 seconds
+- Hold for 4 seconds
+3. Repeat the exercise for 3-5 minutes
 
-### Виджет настроения
+### Widget Mood
 
-1. Запустите приложение и проведите анализ
-2. Нажмите и удерживайте на главном экране
-3. Выберите "Настроение дня"
-4. Разместите виджет на главном экране
+1. Launch the app and run the analysis
+2. Long press on the home screen
+3. Select "Mood of the day"
+4. Place the widget on the home screen
 
-## Разрешения
+## Permissions
 
-При первом запуске приложение запросит следующие разрешения:
-- **Запись аудио**: для анализа голоса
-- **Вибрация**: для ритмичных упражнений
-- **Уведомления**: для фонового сервиса записи
+On first launch, the app will request the following permissions:
+- **Record audio**: for voice analysis
+- **Vibration**: for rhythmic exercises
+- **Notifications**: for background recording service
 
-## Устранение проблем
+## Troubleshooting
 
-### Gradle синхронизация не работает
+### Gradle sync not working
 
 ```bash
 ./gradlew --stop
@@ -81,14 +81,14 @@ rm -rf ~/.gradle/caches
 ./gradlew clean build --refresh-dependencies
 ```
 
-### Ошибки Java
+### Java errors
 
 ```bash
 export JAVA_HOME=$(/usr/libexec/java_home -v 11)
 export PATH=$JAVA_HOME/bin:$PATH
 ```
 
-### Устройство не определяется
+### Device not defined
 
 ```bash
 adb kill-server
@@ -96,51 +96,51 @@ adb start-server
 adb devices
 ```
 
-## Логи
+## Logs
 
-Для просмотра логов:
+To view logs:
 
 ```bash
 adb logcat | grep "PocketPsychologist"
 ```
 
-## Тестирование
+## Testing
 
-### Unit тесты
+### Unit tests
 
 ```bash
 ./gradlew test
 ```
 
-### Instrumented тесты
+### Instrumented tests
 
 ```bash
 ./gradlew connectedAndroidTest
 ```
 
-## Сборка релиза
+## Release build
 
 ```bash
-# Сборка release версии
+# Build the release version
 ./gradlew assembleRelease
 
-# Альтернативно, через Android Studio:
+# Alternatively, via Android Studio:
 # Build > Generate Signed Bundle / APK
-# Выберите APK
-# Создайте или выберите keystore
+# Select APK
+# Create or select a keystore
 ```
 
-## Известные ограничения (MVP)
+## Known limitations (MVP)
 
-- Анализ настроения основан на упрощенной логике (без ML Kit Voice Match)
-- Максимальная длительность записи: 30 секунд
-- Сохранение истории в локальной базе данных Room
-- Простая визуализация дыхательных упражнений
+- Sentiment analysis based on simplified logic (without ML Kit Voice Match)
+- Maximum recording length: 30 seconds
+- Storing history in the local Room database
+- Simple visualization of breathing exercises
 
-## Планы развития
+## Development plans
 
-- Интеграция с ML Kit для более точного анализа
-- Расширенная классификация настроений
-- Интеграция с Google Fit
-- Экспорт истории настроений
-- Уведомления и напоминания
+- Integration with ML Kit for more accurate analysis
+- Advanced sentiment classification
+- Integration with Google Fit
+- Export Mood History
+- Notifications and Reminders
