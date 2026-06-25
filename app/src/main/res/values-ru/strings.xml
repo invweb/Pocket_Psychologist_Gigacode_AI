@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Карманный психолог</string>
+    <string name="btn_record">Начать запись</string>
+    <string name="btn_stop">Стоп</string>
+    <string name="analyzing">Анализ…</string>
+    <string name="listening">Я вас слушаю…</string>
+    <string name="processing">Обработка речи…</string>
+    <string name="mood_today">Настроение дня</string>
+    <string name="breathing_exercise">Дыхательные упражнения</string>
+    <string name="start_breathing">Начать упражнение</string>
+    <string name="finish_breathing">Завершить</string>
+    <string name="inhale">Вдох</string>
+    <string name="hold">Задержка</string>
+    <string name="exhale">Выдох</string>
+    <string name="mood_neutral">Нейтральное</string>
+    <string name="mood_calm">Спокойное</string>
+    <string name="mood_excited">Возбужденное</string>
+    <string name="mood_anxious">Тревожное</string>
+    <string name="mood_sad">Грустное</string>
+    <string name="breathing_desc">Следуйте за кругом: вдох на 4, задержка на 4, выдох на 4</string>
+    <string name="recording_permission_title">Разрешение на запись</string>
+    <string name="recording_permission_description">Приложению нужен доступ к микрофону для анализа голоса</string>
+    <string name="vibration_permission_title">Разрешение на вибрацию</string>
+    <string name="vibration_permission_description">Приложению требуется вибрация для ритмичных упражнений</string>
+    <string name="notification_channel_name">Анализ голоса</string>
+    <string name="notification_channel_description">Уведомления о процессе записи голоса</string>
+    <string name="notification_recording_title">Запись голоса</string>
+    <string name="notification_recording_text">Запись длится…</string>
+    <string name="analyze_your_mood">Анализ настроения</string>
+    <string name="take_a_deep_breath">Сделайте глубокий вдох</string>
+    <string name="last_analysis">Последний анализ</string>
+    <string name="no_history">История настроений пуста</string>
+    <string name="start_breathing_exercise">Начать дыхание</string>
+    <string name="inhale_full">Вдох</string>
+    <string name="exhale_full">Выдох</string>
+    <string name="rest">Пауза</string>
+</resources>

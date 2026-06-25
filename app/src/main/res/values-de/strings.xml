@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Pocket Psychologist</string>
+    <string name="btn_record">Aufnahme starten</string>
+    <string name="btn_stop">Stopp</string>
+    <string name="analyzing">Analyse…</string>
+    <string name="listening">Ich höre zu…</string>
+    <string name="processing">Sprachverarbeitung…</string>
+    <string name="mood_today">Laune des Tages</string>
+    <string name="breathing_exercise">Atemübung</string>
+    <string name="start_breathing">Übung starten</string>
+    <string name="finish_breathing">Beenden</string>
+    <string name="inhale">Einatmen</string>
+    <string name="hold">Halten</string>
+    <string name="exhale">Ausatmen</string>
+    <string name="mood_neutral">Neutral</string>
+    <string name="mood_calm">Ruhig</string>
+    <string name="mood_excited">Erregt</string>
+    <string name="mood_anxious">Unruhig</string>
+    <string name="mood_sad">Traurig</string>
+    <string name="breathing_desc">Folgen Sie dem Kreis: Einatmen auf 4, halten für 4, Ausatmen auf 4</string>
+    <string name="recording_permission_title">Aufnahmegenehmigung</string>
+    <string name="recording_permission_description">Die App benötigt Zugriff auf das Mikrofon zur Stimmanalyse</string>
+    <string name="vibration_permission_title">Vibrationsgenehmigung</string>
+    <string name="vibration_permission_description">Die App benötigt Vibration für rhythmische Übungen</string>
+    <string name="notification_channel_name">Stimmanalyse</string>
+    <string name="notification_channel_description">Benachrichtigungen zum Sprachaufnahmeprozess</string>
+    <string name="notification_recording_title">Stimmaufnahme</string>
+    <string name="notification_recording_text">Die Aufnahme dauert bereits…</string>
+    <string name="analyze_your_mood">Stimmung analysieren</string>
+    <string name="take_a_deep_breath">Tief durchatmen</string>
+    <string name="last_analysis">Letzte Analyse</string>
+    <string name="no_history">Die Stimmungshistorie ist leer</string>
+    <string name="start_breathing_exercise">Atmung starten</string>
+    <string name="inhale_full">Einatmen</string>
+    <string name="exhale_full">Ausatmen</string>
+    <string name="rest">Pause</string>
+</resources>

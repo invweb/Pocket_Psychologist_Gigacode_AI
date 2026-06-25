@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Psicólogo de bolsillo</string>
+    <string name="btn_record">Iniciar grabación</string>
+    <string name="btn_stop">Detener</string>
+    <string name="analyzing">Analizando…</string>
+    <string name="listening">Te estoy escuchando…</string>
+    <string name="processing">Procesando voz…</string>
+    <string name="mood_today">Humor del día</string>
+    <string name="breathing_exercise">Ejercicio de respiración</string>
+    <string name="start_breathing">Iniciar ejercicio</string>
+    <string name="finish_breathing">Finalizar</string>
+    <string name="inhale">Inhalar</string>
+    <string name="hold">Retener</string>
+    <string name="exhale">Exhalar</string>
+    <string name="mood_neutral">Neutral</string>
+    <string name="mood_calm">Tranquilo</string>
+    <string name="mood_excited">Excitado</string>
+    <string name="mood_anxious">Ansioso</string>
+    <string name="mood_sad">Triste</string>
+    <string name="breathing_desc">Siga el círculo: inhale a cuenta de 4, mantenga durante 4, exhale a 4</string>
+    <string name="recording_permission_title">Permiso de grabación</string>
+    <string name="recording_permission_description">La aplicación necesita acceso al micrófono para analizar su voz</string>
+    <string name="vibration_permission_title">Permiso de vibración</string>
+    <string name="vibration_permission_description">La aplicación requiere vibración para ejercicios rítmicos</string>
+    <string name="notification_channel_name">Análisis de voz</string>
+    <string name="notification_channel_description">Notificaciones sobre el proceso de grabación de voz</string>
+    <string name="notification_recording_title">Grabación de voz</string>
+    <string name="notification_recording_text">La grabación lleva…</string>
+    <string name="analyze_your_mood">Analiza tu humor</string>
+    <string name="take_a_deep_breath">Respira profundamente</string>
+    <string name="last_analysis">Último análisis</string>
+    <string name="no_history">El historial de estados de ánimo está vacío</string>
+    <string name="start_breathing_exercise">Iniciar respiración</string>
+    <string name="inhale_full">Inhalar</string>
+    <string name="exhale_full">Exhalar</string>
+    <string name="rest">Pausa</string>
+</resources>

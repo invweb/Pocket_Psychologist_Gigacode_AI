@@ -1,5 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Pocket psychologist</string>
+    <string name="app_name">Pocket Psychologist</string>
     <string name="btn_record">Start recording</string>
     <string name="btn_stop">Stop</string>
     <string name="analyzing">Analyzing…</string>
@@ -10,12 +11,12 @@
     <string name="start_breathing">Start the exercise</string>
     <string name="finish_breathing">Finish</string>
     <string name="inhale">Inhale</string>
-    <string name="hold">Delay</string>
+    <string name="hold">Hold</string>
     <string name="exhale">Exhale</string>
     <string name="mood_neutral">Neutral</string>
     <string name="mood_calm">Calm</string>
     <string name="mood_excited">Excited</string>
-    <string name="mood_anxious">Disturbing</string>
+    <string name="mood_anxious">Anxious</string>
     <string name="mood_sad">Sad</string>
     <string name="breathing_desc">Follow the circle: inhale at the count of 4, hold for 4, exhale at 4</string>
     <string name="recording_permission_title">Recording permission</string>
@@ -30,4 +31,8 @@
     <string name="take_a_deep_breath">Take a deep breath</string>
     <string name="last_analysis">Last analysis</string>
     <string name="no_history">The sentiment history is empty</string>
+    <string name="start_breathing_exercise">Start breathing</string>
+    <string name="inhale_full">Inhale</string>
+    <string name="exhale_full">Exhale</string>
+    <string name="rest">Rest</string>
 </resources>

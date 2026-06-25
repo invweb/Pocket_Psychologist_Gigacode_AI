@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Psicologo da Tasca</string>
+    <string name="btn_record">Inizia registrazione</string>
+    <string name="btn_stop">Ferma</string>
+    <string name="analyzing">Analisi in corso…</string>
+    <string name="listening">Ti sto ascoltando…</string>
+    <string name="processing">Elaborazione voce…</string>
+    <string name="mood_today">Umore del giorno</string>
+    <string name="breathing_exercise">Esercizio di respirazione</string>
+    <string name="start_breathing">Inizia esercizio</string>
+    <string name="finish_breathing">Termina</string>
+    <string name="inhale">Inspira</string>
+    <string name="hold">Trattieni</string>
+    <string name="exhale">Espira</string>
+    <string name="mood_neutral">Neutro</string>
+    <string name="mood_calm">Calmo</string>
+    <string name="mood_excited">Eccitato</string>
+    <string name="mood_anxious">Ansioso</string>
+    <string name="mood_sad">Triste</string>
+    <string name="breathing_desc">Segui il cerchio: inspira per 4, trattieni per 4, espira per 4</string>
+    <string name="recording_permission_title">Autorizzazione registrazione</string>
+    <string name="recording_permission_description">L\'applicazione necessita dell\'accesso al microfono per analizzare la voce</string>
+    <string name="vibration_permission_title">Autorizzazione vibrazione</string>
+    <string name="vibration_permission_description">L\'applicazione richiede la vibrazione per gli esercizi ritmici</string>
+    <string name="notification_channel_name">Analisi voce</string>
+    <string name="notification_channel_description">Notifiche sul processo di registrazione della voce</string>
+    <string name="notification_recording_title">Registrazione voce</string>
+    <string name="notification_recording_text">La registrazione è in corso da…</string>
+    <string name="analyze_your_mood">Analizza il tuo umore</string>
+    <string name="take_a_deep_breath">Fai un respiro profondo</string>
+    <string name="last_analysis">Ultima analisi</string>
+    <string name="no_history">La cronologia degli umori è vuota</string>
+    <string name="start_breathing_exercise">Inizia respirazione</string>
+    <string name="inhale_full">Inspira</string>
+    <string name="exhale_full">Espira</string>
+    <string name="rest">Pausa</string>
+</resources>
